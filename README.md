@@ -1,111 +1,179 @@
-# Personal Finance Tracker
+# 💰 BudgetBuddy – Personal Finance Management Platform
 
-A full-stack personal finance management application that helps users track income and expenses, manage budgets, categorize transactions, and visualize financial insights through interactive dashboards.
+BudgetBuddy is a full-stack personal finance management platform that helps users track income, expenses, budgets, savings goals, and overall financial health through interactive dashboards and real-time analytics.
 
-## Features
+---
 
-* User Registration and Login Authentication
-* Secure JWT-based Authorization
-* Income and Expense Tracking
-* Category-wise Transaction Management
-* Budget Planning and Monitoring
-* Saved Transactions for Recurring Entries
-* Financial Reports and Analytics
-* Interactive Dashboard with Charts
-* User Profile Management
-* Responsive User Interface
+## 🚀 Key Features
 
-## Tech Stack
+### 🔐 Authentication & Security
+- Secure User Registration and Login
+- JWT-Based Authentication
+- User Profile Management
+- Protected Routes and API Security
 
-### Backend
+### 💳 Transaction Management
+- Add Income and Expense Transactions
+- Category-wise Expense Tracking
+- Transaction History Management
+- Edit and Delete Transactions
+- Date-Based Filtering
+- Recurring Transaction Support
 
-* Java
-* Spring Boot
-* Spring Security
-* JWT Authentication
-* MySQL
-* Maven
+### 📊 Financial Health Score
+- Health Score Calculation (0–100)
+- Savings Rate Analysis
+- Budget Adherence Monitoring
+- Expense Ratio Tracking
+- Financial Improvement Suggestions
+- Monthly Performance Evaluation
+
+### 💰 Budget Management
+- Monthly Budget Creation
+- Category-wise Budget Planning
+- Budget Utilization Tracking
+- Spending Alerts
+- Budget Progress Visualization
+
+### 🎯 Savings Goals
+- Create and Manage Savings Goals
+- Goal Progress Tracking
+- Completion Percentage Monitoring
+- Target-Based Financial Planning
+
+### 📈 Analytics & Statistics
+- Monthly Income vs Expense Trends
+- Spending Analytics
+- Interactive Graphs and Charts
+- Financial Insights Dashboard
+- Expense Distribution Analysis
+
+### 📋 Dashboard Overview
+- Total Income
+- Total Expenses
+- Current Balance
+- Total Savings
+- Total Transactions
+- Financial Health Score
+- Budget Summary
+- Analytics Widgets
+
+---
+
+## 🛠️ Tech Stack
 
 ### Frontend
+- React.js
+- JavaScript
+- HTML5
+- CSS3
 
-* React.js
-* JavaScript
-* HTML
-* CSS
+### Backend
+- Java
+- Spring Boot
+- Spring Security
+- JWT Authentication
+- REST APIs
 
 ### Database
+- MySQL
 
-* MySQL
+### Tools & Technologies
+- Git
+- GitHub
+- Maven
+- VS Code
 
-### Tools
+---
 
-* Git
-* GitHub
-* VS Code
-
-## Architecture
-
-The application follows a layered architecture:
-
-* Controller Layer – Handles API requests and responses
-* Service Layer – Contains business logic
-* Repository Layer – Manages database operations
-* Database Layer – Stores user and transaction data
-
-## Key Functionalities
-
-### Authentication
-
-* User Registration
-* User Login
-* Password Reset
-* JWT-based Session Management
-
-### Transaction Management
-
-* Add Income and Expense Transactions
-* Edit Existing Transactions
-* Delete Transactions
-* Filter and Search Transactions
-
-### Budget Management
-
-* Create Monthly Budgets
-* Monitor Spending Against Budget
-* Budget Tracking and Alerts
-
-### Reports and Analytics
-
-* Monthly Income vs Expense Analysis
-* Category-wise Expense Distribution
-* Financial Summary Dashboard
-
-## Project Structure
+## 🏗️ System Architecture
 
 ```text
-backend/
-├── controllers
-├── services
-├── repository
-├── security
-├── models
-├── dto
-└── resources
-
-frontend/
-├── src
-├── components
-├── pages
-├── hooks
-└── services
+Frontend (React.js)
+        │
+        ▼
+REST APIs
+        │
+        ▼
+Spring Boot Backend
+        │
+        ▼
+MySQL Database
 ```
 
-## Installation and Setup
+---
 
-### Clone the Repository
+## 📸 Application Screenshots
+
+### 🏠 Dashboard
+
+Track financial health, expenses, savings, budget utilization, and financial analytics from a single dashboard.
+
+![Dashboard](output/dashboard.png)
+
+---
+
+### 📊 Statistics & Analytics
+
+Visualize monthly income and expense trends through interactive charts and analytics.
+
+![Statistics](output/statistics.png)
+
+---
+
+### 💰 Budget Management
+
+Create and manage monthly budgets, monitor spending, and track budget utilization.
+
+![Budget Management](output/budget-management.png)
+
+---
+
+### 💳 Transaction Management
+
+Add categorized income and expense transactions with date tracking and validation.
+
+![Transaction Management](output/transactions.png)
+
+---
+
+## 📂 Project Structure
+
+```text
+BudgetBuddy
+│
+├── backend
+│   ├── controllers
+│   ├── services
+│   ├── repository
+│   ├── security
+│   ├── dto
+│   └── resources
+│
+├── frontend
+│   ├── src
+│   ├── components
+│   ├── pages
+│   ├── services
+│   └── hooks
+│
+├── output
+│   ├── dashboard.png
+│   ├── statistics.png
+│   ├── budget-management.png
+│   └── transactions.png
+│
+└── README.md
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+### Clone Repository
 
 ```bash
-git clone https://github.com/LochanaGunaganti/Finance-Tracker.git
+git clone https://github.com/SumayyaKousar-2249/BudgetBuddy.git
 ```
 
 ### Backend Setup
@@ -123,29 +191,48 @@ npm install
 npm start
 ```
 
+### Application URLs
 
-## Learning Outcomes
+```text
+Frontend : http://localhost:3000
+Backend  : http://localhost:8082
+```
+
+---
+
+## 🎯 Learning Outcomes
 
 Through this project, I gained practical experience in:
 
-* Full-Stack Application Development
-* REST API Design
-* Spring Boot Architecture
-* Authentication and Authorization
-* Database Design and Optimization
-* Frontend-Backend Integration
-* Financial Data Visualization
+- Full-Stack Development
+- Spring Boot Application Architecture
+- JWT Authentication & Authorization
+- REST API Development
+- React.js Frontend Development
+- Database Design with MySQL
+- Financial Data Visualization
+- Frontend–Backend Integration
+- Secure Application Development
 
-## Future Enhancements
+---
 
-* Email Notifications
-* Export Reports to PDF
-* Multi-Currency Support
-* Mobile Responsive Improvements
-* Cloud Deployment
+## 🔮 Future Enhancements
 
-## Author
+- AI-Powered Spending Recommendations
+- Smart Budget Predictions
+- Expense Forecasting
+- PDF Report Generation
+- Multi-Currency Support
+- Family Budget Management
+- Cloud Deployment
+- Mobile Application Support
 
-Gunaganti Lochana
+---
 
-GitHub: https://github.com/LochanaGunaganti
+## 👨‍💻 Author
+
+**Mohammad Sumayya Kousar**
+
+GitHub: https://github.com/SumayyaKousar-2249
+
+LinkedIn: https://www.linkedin.com/in/sumayya-kousar-mohammad/
