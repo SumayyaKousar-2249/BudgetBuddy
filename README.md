@@ -109,7 +109,7 @@ MySQL Database
 
 Track financial health, expenses, savings, budget utilization, and financial analytics from a single dashboard.
 
-![Dashboard](output/dashboard.png)
+![Dashboard](output/Dashboard.png)
 
 ---
 
@@ -117,7 +117,7 @@ Track financial health, expenses, savings, budget utilization, and financial ana
 
 Visualize monthly income and expense trends through interactive charts and analytics.
 
-![Statistics](output/statistics.png)
+![Statistics](output/Statistics.png)
 
 ---
 
@@ -125,7 +125,7 @@ Visualize monthly income and expense trends through interactive charts and analy
 
 Create and manage monthly budgets, monitor spending, and track budget utilization.
 
-![Budget Management](output/budget-management.png)
+![Budget Management](output/BudegetCheck.png)
 
 ---
 
@@ -133,7 +133,7 @@ Create and manage monthly budgets, monitor spending, and track budget utilizatio
 
 Add categorized income and expense transactions with date tracking and validation.
 
-![Transaction Management](output/transactions.png)
+![Transaction Management](output/Transactions.png)
 
 ---
 
