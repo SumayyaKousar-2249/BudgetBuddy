@@ -61,6 +61,29 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
                                       @Param("month") int month,
                                       @Param("year") int year);
 
+    @Query(value = "SELECT SUM(t.amount) FROM `transaction` t " +
+            "JOIN users u ON t.user_id = u.id " +
+            "JOIN category c ON t.category_id = c.category_id " +
+            "WHERE c.category_id = :categoryId AND u.id = :userId " +
+            "AND MONTH(t.date) = :month AND YEAR(t.date) = :year", nativeQuery = true)
+    Double findTotalByCategoryIdAndUserIdAndMonthAndYear(@Param("categoryId") int categoryId,
+                                                         @Param("userId") long userId,
+                                                         @Param("month") int month,
+                                                         @Param("year") int year);
+
+    @Query(value = "SELECT t.transaction_id, t.amount, t.date, t.description, " +
+            "c.category_name, c.category_id, " +
+            "tt.transaction_type_id, tt.transaction_type_name, " +
+            "u.id AS u_id, u.email AS u_email " +
+            "FROM transaction t " +
+            "JOIN users u ON t.user_id = u.id " +
+            "JOIN category c ON t.category_id = c.category_id " +
+            "JOIN transaction_type tt ON c.transaction_type_id = tt.transaction_type_id " +
+            "WHERE u.id = :userId " +
+            "ORDER BY t.date DESC LIMIT :limitCount", nativeQuery = true)
+    List<Object[]> findRecentTransactionsByUserId(@Param("userId") long userId,
+                                                   @Param("limitCount") int limitCount);
+
     @Query(value = "SELECT " +
             "MONTH(t.date), " +
             "SUM(CASE WHEN tt.transaction_type_id = 1 THEN t.amount ELSE 0 END), " +

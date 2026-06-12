@@ -303,9 +303,90 @@ const skipSavedTransaction = (id) => {
     )
 }
 
+// ── Phase 1: Financial Health Score ──────────────────────────────────────────
+const getHealthScore = (month, year) => {
+    const user = AuthService.getCurrentUser();
+    return axios.get(API_BASE_URL + '/health/score', {
+        headers: AuthService.authHeader(),
+        params: { userId: user.id, email: user.email, month, year }
+    });
+};
+
+// ── Phase 1: Recent Transactions ─────────────────────────────────────────────
+const getRecentTransactions = (limit = 5) => {
+    const user = AuthService.getCurrentUser();
+    return axios.get(API_BASE_URL + '/report/getRecentTransactions', {
+        headers: AuthService.authHeader(),
+        params: { userId: user.id, limit }
+    });
+};
+
+// ── Phase 1: Category Budgets ─────────────────────────────────────────────────
+const getCategoryBudgets = (month, year) => {
+    const user = AuthService.getCurrentUser();
+    return axios.get(API_BASE_URL + '/categorybudget/get', {
+        headers: AuthService.authHeader(),
+        params: { userId: user.id, month, year }
+    });
+};
+
+const saveCategoryBudget = (categoryId, categoryName, amount, month, year) => {
+    const user = AuthService.getCurrentUser();
+    return axios.post(API_BASE_URL + '/categorybudget/save',
+        { userId: user.id, categoryId, categoryName, amount, month, year },
+        { headers: AuthService.authHeader() }
+    );
+};
+
+const deleteCategoryBudget = (categoryId, month, year) => {
+    const user = AuthService.getCurrentUser();
+    return axios.delete(API_BASE_URL + '/categorybudget/delete', {
+        headers: AuthService.authHeader(),
+        params: { userId: user.id, categoryId, month, year }
+    });
+};
+
+// ── Phase 1: Savings Goals ────────────────────────────────────────────────────
+const getSavingsGoals = () => {
+    const user = AuthService.getCurrentUser();
+    return axios.get(API_BASE_URL + '/goals/user', {
+        headers: AuthService.authHeader(),
+        params: { userId: user.id }
+    });
+};
+
+const createSavingsGoal = (goalName, targetAmount, savedAmount, targetDate, description) => {
+    const user = AuthService.getCurrentUser();
+    return axios.post(API_BASE_URL + '/goals/create',
+        { userId: user.id, goalName, targetAmount, savedAmount, targetDate, description },
+        { headers: AuthService.authHeader() }
+    );
+};
+
+const updateSavingsGoal = (goalId, goalName, targetAmount, savedAmount, targetDate, description) => {
+    const user = AuthService.getCurrentUser();
+    return axios.put(API_BASE_URL + `/goals/${goalId}`,
+        { userId: user.id, goalName, targetAmount, savedAmount, targetDate, description },
+        { headers: AuthService.authHeader() }
+    );
+};
+
+const deleteSavingsGoal = (goalId) => {
+    return axios.delete(API_BASE_URL + `/goals/${goalId}`, {
+        headers: AuthService.authHeader()
+    });
+};
+
+const depositToGoal = (goalId, amount) => {
+    return axios.put(API_BASE_URL + `/goals/${goalId}/deposit`, null, {
+        headers: AuthService.authHeader(),
+        params: { amount }
+    });
+};
+
 const UserService = {
     get_categories,
-    add_transaction ,
+    add_transaction,
     get_transactions,
     get_single_transaction,
     update_transaction,
@@ -326,6 +407,17 @@ const UserService = {
     updateSavedTransaction,
     deleteSavedTransaction,
     addSavedTransaction,
-    skipSavedTransaction
+    skipSavedTransaction,
+    // ── Phase 1 additions ──────────────────────────────────────────
+    getHealthScore,
+    getRecentTransactions,
+    getCategoryBudgets,
+    saveCategoryBudget,
+    deleteCategoryBudget,
+    getSavingsGoals,
+    createSavingsGoal,
+    updateSavingsGoal,
+    deleteSavingsGoal,
+    depositToGoal,
 }
 export default UserService;

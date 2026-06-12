@@ -1,0 +1,10 @@
+.vscode/
+.project
+
+node_modules/
+
+target/
+
+build/
+
+*.log

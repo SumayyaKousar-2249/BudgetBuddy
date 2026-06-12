@@ -18,6 +18,8 @@ const Dashboard = lazy(() => import('./pages/user/dashboard.js'))
 const Transactions = lazy(() => import("./pages/user/transactions.js"))
 const NewTransaction = lazy(() => import("./pages/user/newTransaction.js"))
 const EditTransaction = lazy(() => import("./pages/user/editTransaction.js"))
+const Budgets = lazy(() => import('./pages/user/budgets.js'))
+const SavingsGoals = lazy(() => import('./pages/user/savingsGoals.js'))
 const ForgotPasswordEmailVerfication = lazy(() => import('./pages/auth/forgotpassword/forgotPasswordEmailVerification.js'))
 const ForgotPasswordCodeVerification = lazy(() => import('./pages/auth/forgotpassword/forgotPasswordCodeVerification'))
 const ForgotPasswordChangePassword = lazy(() => import('./pages/auth/forgotpassword/changePassword.js'))
@@ -60,6 +62,8 @@ function App() {
                             <Route path="/user/newTransaction" element={<NewTransaction />} />
                             <Route path="/user/transactions" element={<Transactions />} />
                             <Route path="/user/editTransaction/:transactionId" element={<EditTransaction />} />
+                            <Route path="/user/budgets" element={<Budgets />} />
+                            <Route path="/user/savingsGoals" element={<SavingsGoals />} />
                             <Route path="/user/savedTransactions" element={<SavedTransactions />} />
                             <Route path="/user/savedTransactions/new" element={<NewSavedTransaction />} />
                             <Route path="/user/editSavedTransaction/:transactionId" element={<EditSavedTransaction />} />

@@ -8,7 +8,7 @@ const SideBarLinks = [
     },
     {
         "id": 1,
-        "name": "Transactions History",
+        "name": "Transactions",
         "icon": "fa fa-exchange",
         "to": "/user/transactions",
         "role": "ROLE_USER"
@@ -18,6 +18,20 @@ const SideBarLinks = [
         "name": "New Transaction",
         "icon": "fa fa-calendar-plus-o",
         "to": "/user/newTransaction",
+        "role": "ROLE_USER"
+    },
+    {
+        "id": 12,
+        "name": "Budgets",
+        "icon": "fa fa-pie-chart",
+        "to": "/user/budgets",
+        "role": "ROLE_USER"
+    },
+    {
+        "id": 13,
+        "name": "Savings Goals",
+        "icon": "fa fa-flag-o",
+        "to": "/user/savingsGoals",
         "role": "ROLE_USER"
     },
     {
@@ -76,7 +90,6 @@ const SideBarLinks = [
         "to": "/admin/settings",
         "role": "ROLE_ADMIN"
     },
-
 ]
 
 export default SideBarLinks;
