@@ -232,7 +232,3 @@ Through this project, I gained practical experience in:
 ## 👨‍💻 Author
 
 **Mohammad Sumayya Kousar**
-
-GitHub: https://github.com/SumayyaKousar-2249
-
-LinkedIn: https://www.linkedin.com/in/sumayya-kousar-mohammad/
